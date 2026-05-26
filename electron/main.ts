@@ -10,29 +10,24 @@ function createWindow() {
     width: 400,
     height: 600,
     show: false,
-    webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
-    },
   });
 
-//   mainWindow.loadFile("renderer/index.html");
-// mainWindow.loadFile(
-//   path.join(__dirname, "../../renderer/index.html")
-// );
-mainWindow.loadFile(
-  path.join(process.resourcesPath, "renderer/index.html")
-);
+  mainWindow.loadFile(
+    path.join(__dirname, "../../renderer/index.html")
+  );
 }
 
 app.whenReady().then(() => {
   createWindow();
   createTray(mainWindow!);
+
+  console.log("Electron started");
   startWebSocketServer();
 });
 
 app.on("window-all-closed", () => {
   // Keep running in tray
-  app.quit();
+  // app.quit();
 });
 
 app.setLoginItemSettings({

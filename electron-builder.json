@@ -10,6 +10,7 @@
   "files": [
     "dist/**/*",
     "renderer/**/*",
+    "assets/**/*",
     "node_modules/**/*",
     "package.json"
   ],

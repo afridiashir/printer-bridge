@@ -1,10 +1,14 @@
 import { Tray, Menu, BrowserWindow } from "electron";
 import path from "path";
 
+import { app } from "electron";
+
 let tray: Tray;
 
+const iconPath = path.join(__dirname, "../../assets/icon.png");
+
 export function createTray(win: BrowserWindow) {
-  tray = new Tray(path.join(__dirname, "icon.png"));
+  tray = new Tray(iconPath);
 
   const contextMenu = Menu.buildFromTemplate([
     {
