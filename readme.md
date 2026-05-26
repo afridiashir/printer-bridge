@@ -64,7 +64,7 @@ Local Printer (USB / Thermal / Network)
 
 ### Clone repo
 ```bash
-git clone https://github.com/your-username/printer-bridge.git
+git clone https://github.com/afridiashir/printer-bridge.git
 cd printer-bridge
 ```
 
