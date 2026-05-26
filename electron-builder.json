@@ -1,0 +1,25 @@
+{
+  "appId": "com.company.printerbridge",
+
+  "productName": "PrinterBridge",
+
+  "directories": {
+    "output": "release"
+  },
+
+  "files": [
+    "dist/**/*",
+    "renderer/**/*",
+    "node_modules/**/*",
+    "package.json"
+  ],
+
+  "win": {
+    "target": "nsis"
+  },
+
+  "nsis": {
+    "oneClick": true,
+    "allowToChangeInstallationDirectory": false
+  }
+}

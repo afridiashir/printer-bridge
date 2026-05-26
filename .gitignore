@@ -1,0 +1,64 @@
+# =====================
+# Dependencies
+# =====================
+node_modules/
+
+# =====================
+# Build outputs
+# =====================
+dist/
+release/
+out/
+build/
+
+# Electron-builder cache
+electron-builder-cache/
+app/
+
+# =====================
+# Logs
+# =====================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =====================
+# OS files
+# =====================
+.DS_Store
+Thumbs.db
+
+# =====================
+# Environment variables
+# =====================
+.env
+.env.local
+.env.*.local
+
+# =====================
+# TypeScript
+# =====================
+*.tsbuildinfo
+
+# =====================
+# Electron cache / runtime
+# =====================
+app.asar
+app.asar.unpacked/
+
+# Electron builder temp files
+electron-builder-state.json
+
+# =====================
+# IDEs
+# =====================
+.vscode/
+.idea/
+
+# =====================
+# Optional: local renderer build (if you later use React)
+# =====================
+renderer/dist/
+.next/
