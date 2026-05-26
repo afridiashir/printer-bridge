@@ -1,5 +1,5 @@
 import WebSocket, { WebSocketServer } from "ws";
-import { printReceipt } from "./printer";
+import { printReceipt, printHTMLReceipt } from "./printer";
 
 export function startWebSocketServer() {
   const wss = new WebSocketServer({ port: 3210 });
@@ -12,9 +12,21 @@ export function startWebSocketServer() {
     ws.on("message", async (message) => {
       try {
         const data = JSON.parse(message.toString());
+        console.log("[WebSocket] Received message:", data);
 
         if (data.type === "PRINT") {
           await printReceipt(data.payload);
+
+          ws.send(
+            JSON.stringify({
+              success: true,
+            })
+          );
+        }
+
+        if (data.type === "PRINT_HTML") {
+          await printHTMLReceipt(data.payload);
+          console.log("[WebSocket] HTML content printed successfully");
 
           ws.send(
             JSON.stringify({
